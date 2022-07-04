@@ -7,6 +7,8 @@ years: [2021]
 nav: true
 nav_order: 1
 ---
+* denotes equal contribution.
+
 <!-- _pages/publications.md -->
 <div class="publications">
 
