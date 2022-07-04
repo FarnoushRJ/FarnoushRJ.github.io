@@ -2,12 +2,11 @@
 layout: page
 permalink: /publications/
 title: publications
-description: 
+description: <b>*</b> denotes equal contribution.
 years: [2021]
 nav: true
 nav_order: 1
 ---
-* denotes equal contribution.
 
 <!-- _pages/publications.md -->
 <div class="publications">
