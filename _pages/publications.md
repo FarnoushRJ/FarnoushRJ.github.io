@@ -3,7 +3,7 @@ layout: page
 permalink: /publications/
 title: publications
 description: <b>*</b> denotes equal contribution.
-years: [2021]
+years: [2022]
 nav: true
 nav_order: 1
 ---
@@ -14,7 +14,6 @@ nav_order: 1
 {%- for y in page.years %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f papers -q @*[year={{y}}]* %}
-  <b>*</b> denotes equal contribution.
 {% endfor %}
 
 </div>
