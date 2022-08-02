@@ -4,5 +4,5 @@ date: 2022-07-03
 inline: true
 ---
 
-One paper got oral acceptance at ECCV 2022. 🥳
+One paper accepted at ECCV 2022 as an oral presentation. 🥳
 
