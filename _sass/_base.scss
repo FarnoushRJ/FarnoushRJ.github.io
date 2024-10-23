@@ -109,7 +109,7 @@ blockquote {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 15%;
     .address {
       p { display: block; }
     }
@@ -275,6 +275,8 @@ footer.fixed-bottom {
     color: var(--global-footer-text-color);
     padding-top: 9px;
     padding-bottom: 8px;
+    width: 100%;
+    
   }
   a {
     color: var(--global-footer-link-color);
@@ -428,6 +430,7 @@ footer.sticky-bottom {
     .row {
       display: flex;
       align-items: center;
+      width: 100%;
     }
   }
 
@@ -448,78 +451,131 @@ footer.sticky-bottom {
 
 
 // Publications
-
 .publications {
   margin-top: 2rem;
+  font-family: 'sans-serif', 'Roboto';
+
+  /* Main Title of the Publication Section */
   h1 {
     color: var(--global-theme-color);
-    font-size: 2rem;
-    text-align: center;
+    font-size: 2rem; /* Adjusted font size */
+    text-align: left;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 1em; /* Adjust margin */
+    font-weight: 500; /* Reduced weight for less boldness */
+    text-transform: none; /* No text transformation */
+    letter-spacing: 0; /* Removed letter spacing */
   }
-  h2 {
-    margin-bottom: 1rem;
-    span {
-      font-size: 1.5rem;
-    }
+
+  /* Journal Name Styles */
+  .journal-name {
+    text-align: left; 
+    margin: 15px 0; /* Space above and below the journal name */
   }
-  h2.year {
-    color: var(--global-divider-color);
-    border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
-    margin-top: 2rem;
-    margin-bottom: -2rem;
-    text-align: right;
+
+  .journal-label {
+    display: inline-block; /* Treat as block for padding and margin */
+    padding: 5px 10px; /* Padding for the label */
+    border-radius: 5px; /* Rounded corners for the label */
+    font-size: 1em; /* Standard font size */
+    font-weight: normal; /* Normal weight for label */
   }
+  
+  .abbr {
+    margin-bottom: 0.5rem; /* Space between the abbr and the next element */
+    display: block; /* Make sure it takes up space */
+  }
+
+  .abbr abbr {
+    display: inline-block;
+    background-color: var(--global-theme-color);
+    padding: 0.25rem 1rem;
+    border-radius: 4px; /* Optional: rounded edges */
+    color: white;
+  }
+
+  .abbr a {
+    color: white; /* Ensure abbr links are visible */
+    text-decoration: none;
+  }
+
+  .abbr a:hover {
+    text-decoration: underline;
+  }
+
   ol.bibliography {
     list-style: none;
     padding: 0;
     margin-top: 0;
 
+    /* Individual publication list item */
     li {
-      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: left; /* Centers content */
+      margin-bottom: 3rem;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease-in-out;
+      width: 100%; /* Set width to 100% for better alignment */
+
+      &:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-color: var(--global-theme-color);
+      }
+
+      /* Preview media (image) */
       .preview {
         width: 100%;
-        min-width: 80px;
-        max-width: 200px;
-      }
-      .abbr {
-        height: 2rem;
-        margin-bottom: 0.5rem;
-        abbr {
-          display: inline-block;
-          background-color: var(--global-theme-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          a {
-            color: white;
-            &:hover {
-              text-decoration: none;
-            }
-          }
-        }
-        .award {
-          color: var(--global-theme-color) !important;
-          border: 1px solid var(--global-theme-color);
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        img {
+          width: 100%; /* Image takes full width of its container */
+          height: auto; /* Preserve aspect ratio */
+          border-radius: 6px;
         }
       }
+
+      /* Title */
       .title {
-        font-weight: bolder;
+        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; /* Updated font family */
+        font-weight: 400; /* Normal weight for less boldness */
+        font-size: 24px; /* Set to 24px */
+        text-align: left; 
+        margin: 0; /* Remove any margin to avoid spacing issues */
+        padding-bottom: 0.5rem; /* Space between title and line */
+        border-bottom: 2px solid var(--global-theme-color); /* Add a black line */
       }
+      
+      /* Author Information */
       .author {
+        font-size: 1rem;
+        text-align: left; 
+        margin-bottom: 1rem; /* Existing margin for spacing */
+        margin-top: 0.5rem; /* Add this to create space above the author names */
         a {
           border-bottom: 1px dashed var(--global-theme-color);
+          transition: all 0.2s ease;
           &:hover {
-              border-bottom-style: solid;
-              text-decoration: none;
+            border-bottom-style: solid;
+            text-decoration: none;
+            color: var(--global-theme-color);
           }
         }
-        > em {
-          border-bottom: 1px solid;
-          font-style: normal;
-        }
       }
+      
+
+      /* Year (displayed on the right) */
+      .year {
+        color: var(--global-divider-color);
+        font-size: 1rem;
+        text-align: right;
+        margin-top: 1rem;
+        align-self: flex-end; /* Aligns year to the right */
+      }
+
+      /* Links (Download, DOI, etc.) */
       .links {
         a.btn {
           color: var(--global-text-color);
@@ -570,8 +626,41 @@ footer.sticky-bottom {
         border-color: var(--global-text-color);
       }
     }
+
+    /* Responsive design for smaller screens (like phones) */
+    @media (max-width: 576px) {
+      li {
+        flex-direction: column; /* Stack content vertically on small screens */
+        text-align: center; /* Center all text */
+      }
+
+      .preview {
+        margin-bottom: 1rem;
+        img {
+          max-width: 100%; /* Ensure the image is responsive */
+        }
+      }
+
+      .title {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem; /* Adjust the title size for mobile */
+      }
+
+      .author, .year {
+        margin-bottom: 1rem;
+      }
+
+      .links {
+        margin-top: 0.5rem;
+      }
+    }
   }
 }
+
+
+
+
+
 
 // Rouge Color Customization
 figure.highlight {
