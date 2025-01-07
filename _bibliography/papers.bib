@@ -1,6 +1,19 @@
 ---
 ---
 
+@article{schnake2024symbolicxaiexplanation,
+      title={Towards Symbolic XAI -- Explanation Through Human Understandable Logical Relationships Between Features}, 
+      author={Schnake, T.* and Rezaei Jafari, F.* and Lederer, J and Xiong, P. and Nakajima, S. and Gugler, S. and Montavon, G. and Müller, K-R.},
+      selected=True,
+      preview={SymbXAI_logo.png},
+      journal = {Information Fusion},
+      abbr={Information Fusion},
+      year = {2025},
+      pdf = {https://www.sciencedirect.com/science/article/pii/S1566253524007012},
+      contribution={equal},
+abstract = {Explainable Artificial Intelligence (XAI) plays a crucial role in fostering transparency and trust in AI systems. Traditional XAI methods typically provide a single level of abstraction for explanations, often in the form of heatmaps in post-hoc attribution methods. Alternatively, XAI offers rule-based explanations that are expressive and composed of logical formulas but often fail to faithfully capture the model’s decision-making process or impose strict limitations on the model’s learning capabilities by requiring it to be inherently self-explainable. We aim to bridge these two approaches by developing post-hoc explanations that attribute relevance to complex logical relationships between input features while faithfully aligning with the model’s intricate prediction processes and imposing no restrictions on the model’s architecture. To this end, we propose a framework called Symbolic XAI, which attributes relevance to symbolic formulas expressing logical relationships between input features. Our method naturally extends propagation-based explanation approaches, such as layer-wise relevance propagation or GNN-LRP, and perturbation-based approaches, such as Shapley-values. Beyond relevance attribution of logical formulas for a model’s prediction, our framework introduces a strategy to automatically identify logical formulas that best summarize the model’s decision strategy, eliminating the need to predefine these formulas. We demonstrate the effectiveness of our framework in domains such as natural language processing (NLP), computer vision, and chemistry, where abstract symbolic domain knowledge is abundant and critically valuable to users. In summary, the Symbolic XAI framework provides a local understanding of the model’s decision-making process that is both flexible for customization by the user and human-readable through logical formulas.}
+}
+
 @article{jafari2024mambalrp,
       title={MambaLRP: Explaining Selective State Space Sequence Models},
       author={Rezaei Jafari, F. and Montavon, G. and Müller, K-R. and Eberle, O.},
@@ -14,18 +27,6 @@
       abstract={We propose MambaLRP, a novel algorithm within the LRP framework, which ensures a more stable and reliable relevance propagation through these components. Our proposed method is theoretically sound and excels in achieving state-of-the-art explanation performance across a diverse range of models and datasets. Moreover, MambaLRP facilitates a deeper inspection of Mamba architectures, uncovering various biases and evaluating their significance. It also enables the analysis of previous speculations regarding the long-range capabilities of Mamba models.}
 }
 
-@article{schnake2024symbolicxaiexplanation,
-      title={Towards Symbolic XAI -- Explanation Through Human Understandable Logical Relationships Between Features}, 
-      author={Schnake, T.* and Rezaei Jafari, F.* and Lederer, J and Xiong, P. and Nakajima, S. and Gugler, S. and Montavon, G. and Müller, K-R.},
-      year={2024},
-      selected=True,
-      preview={SymbXAI_logo.png},
-      journal={arXiv},
-      abbr={arXiv},
-      contribution={equal},
-      pdf=https://arxiv.org/abs/2408.17198, 
-      abstract={We propose a framework, called Symbolic XAI, that attributes relevance to symbolic queries expressing logical relationships between input features, thereby capturing the abstract reasoning behind a model's predictions. The methodology is built upon a simple yet general multi-order decomposition of model predictions. This decomposition can be specified using higher-order propagation-based relevance methods, such as GNN-LRP, or perturbation-based explanation methods commonly used in XAI. The effectiveness of our framework is demonstrated in the domains of natural language processing (NLP), vision, and quantum chemistry (QC), where abstract symbolic domain knowledge is abundant and of significant interest to users. The Symbolic XAI framework provides an understanding of the model's decision-making process that is both flexible for customization by the user and human-readable through logical formulas.}
-}
 
 @article{ATS,
   title={Adaptive Token Sampling For Efficient Vision Transformers},
