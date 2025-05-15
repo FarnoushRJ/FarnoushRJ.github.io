@@ -4,5 +4,5 @@ date: 2024-09-27
 inline: true
 ---
 
-🎉 Our paper on the explainability of selective state space sequence models, called MambaLRP, has got accepted at NeurIPS 2024. 
+🎉 Our paper, [MambaLRP](https://nips.cc/virtual/2024/poster/96794), has got accepted at NeurIPS 2024. 
 
