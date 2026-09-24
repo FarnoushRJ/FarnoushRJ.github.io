@@ -6,7 +6,7 @@ layout: default
     <header class="intro-identity">
       {% if page.profile.image %}
         {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-        {% include figure.html path=profile_image_path class="intro-portrait" alt="Farnoush Rezaei Jafari" %}
+        <figure><img src="{{ profile_image_path | relative_url }}" class="intro-portrait" alt="Farnoush Rezaei Jafari" width="144" height="144"></figure>
       {% endif %}
       <h1 id="intro-title">{{ site.first_name }}<br>{{ site.last_name }}</h1>
       <p class="intro-role">PhD candidate<br><span>TU Berlin · BIFOLD</span></p>
