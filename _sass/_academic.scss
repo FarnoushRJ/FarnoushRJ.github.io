@@ -1,0 +1,125 @@
+// Intro and research layouts shared by the home and publications pages.
+.academic-home {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+
+  .intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    column-gap: 3rem;
+    border-top: 1px solid var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .intro-identity, .intro-bio { padding: 2rem 0; }
+  .intro-identity {
+    border-right: 1px solid var(--global-divider-color);
+    padding-right: 2rem;
+    figure { margin-bottom: 1.5rem; }
+    h1 { font-size: clamp(2.3rem, 4vw, 3.5rem); font-weight: 700; line-height: 1.08; letter-spacing: -.045em; }
+  }
+  .intro-portrait { width: 144px; height: 144px; object-fit: cover; border-radius: 50%; }
+  .intro-role, .intro-focus { font-family: monospace; font-size: .85rem; line-height: 1.8; }
+  .intro-role { margin-top: 1.5rem; text-transform: uppercase; letter-spacing: .06em; }
+  .intro-role span { color: var(--global-text-color-light); }
+  .intro-focus { color: var(--global-theme-color); margin-bottom: 0; }
+  .intro-bio { align-self: center; font-size: 1.08rem; line-height: 1.8; }
+  .intro-bio p:last-child { margin-bottom: 0; }
+  .intro-contact, .intro-links { padding: 1.25rem 0; border-top: 1px solid var(--global-divider-color); font-size: .9rem; }
+  .intro-contact { overflow-wrap: anywhere; }
+  .intro-links { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; }
+  .news { margin: 3.5rem 0; }
+  h2 { font-size: 2rem; font-weight: 700; letter-spacing: -.035em; }
+}
+.section-dot { color: var(--global-theme-color); }
+.publications {
+  margin-top: 3rem;
+  .publication-note { font-size: .85rem; color: var(--global-text-color-light); }
+  ol.bibliography { list-style: none; padding: 0; margin: 0; }
+  ol.bibliography > li { padding: 2.5rem 0; border-top: 1px solid var(--global-divider-color); }
+  .publication-entry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 3rem; align-items: center; }
+  .publication-media img { display: block; width: 100%; max-width: 100%; height: auto; max-height: 340px; object-fit: contain; }
+  .publication-content { min-width: 0; }
+  .publication-content:only-child { grid-column: 1 / -1; }
+  .publication-venue { color: var(--global-theme-color); font-family: monospace; font-size: .78rem; line-height: 1.6; margin-bottom: .7rem; }
+  .publication-title { font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-weight: 700; line-height: 1.2; letter-spacing: -.035em; margin-bottom: .85rem; }
+  .author { font-size: .9rem; line-height: 1.65; margin-bottom: .8rem; }
+  .publication-links { display: flex; flex-wrap: wrap; gap: .6rem; font-family: monospace; font-size: .85rem; margin-bottom: 1rem; }
+  .publication-links a + a::before { content: '/'; display: inline-block; margin-right: .6rem; color: var(--global-text-color-light); }
+  .publication-summary { font-size: .9rem; line-height: 1.75; margin: 0; }
+}
+@media (max-width: 767px) {
+  .academic-home {
+    padding: 2rem 0;
+    .intro { grid-template-columns: minmax(0, 1fr); }
+    .intro-identity { border-right: 0; padding-right: 0; padding-bottom: 1rem; }
+    .intro-bio { padding-top: 1rem; }
+    .intro-links { padding-top: 0; border-top: 0; }
+  }
+  .publications .publication-entry { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .publications .publication-media img { max-height: 260px; }
+}
+
+// Inline brand treatments in the introductory paragraph.
+.intro-bio {
+  .brand-microsoft {
+    display: inline-flex;
+    align-items: baseline;
+    gap: .25em;
+    white-space: nowrap;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    color: var(--global-text-color);
+  }
+  .microsoft-mark {
+    display: inline-block;
+    position: relative;
+    vertical-align: baseline;
+    width: .85em;
+    height: .85em;
+    flex: none;
+    // Positioned tiles leave the mark's baseline at its bottom edge.
+    span { position: absolute; width: calc(50% - 1px); height: calc(50% - 1px); }
+    span:nth-child(1) { top: 0; left: 0; background: #f25022; }
+    span:nth-child(2) { top: 0; right: 0; background: #7fba00; }
+    span:nth-child(3) { bottom: 0; left: 0; background: #00a4ef; }
+    span:nth-child(4) { bottom: 0; right: 0; background: #ffb900; }
+  }
+}
+
+// Shared Google lettering for the intro and news announcements.
+.brand-google {
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -.055em;
+  .google-blue { color: #4285f4; }
+  .google-red { color: #ea4335; }
+  .google-yellow { color: #fbbc05; }
+  .google-green { color: #34a853; }
+}
+
+// Keep the official wordmark legible in both themes.
+.news-mats-logo {
+  width: 70px;
+  height: 22px;
+  object-fit: contain;
+  vertical-align: -.2em;
+  padding: 2px;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.academic-home {
+  .intro-contact a, .intro-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.5rem;
+    color: var(--global-text-color);
+    &:hover { color: var(--global-theme-color); text-decoration: none; }
+    &:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; border-radius: 3px; }
+  }
+}

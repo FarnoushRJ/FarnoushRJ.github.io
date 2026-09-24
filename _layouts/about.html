@@ -1,66 +1,30 @@
 ---
 layout: default
 ---
-
-<!-- about.html -->
-      <div class="post">
-        <header class="post-header">
-          <h1 class="post-title">
-           {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
-          </h1>
-          <p class="desc">{{ page.subtitle }}</p>
-        </header>
-
-        <article>
-          {% if page.profile -%}
-          <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
-            {%- if page.profile.image %}
-              {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
-
-              {% if page.profile.image_cicular %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
-              {% else %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
-              {% endif %}
-
-              {% include figure.html 
-              path=profile_image_path 
-              class=profile_image_class
-              alt=page.profile.image -%}
-            {% endif -%}
-            {%- if page.profile.address %}
-            <div class="address">
-              {{ page.profile.address }}
-            </div>
-            {%- endif %}
-          </div>
-          {%- endif %}
-
-          <div class="clearfix">
-            {{ content }}
-          </div>
-
-          {% if page.news -%}
-          <!-- News -->
-          {%- include news.html %}
-          {%- endif %}
-          {% if page.selected_papers -%}
-            <!-- Selected papers -->
-            {%- include selected_papers.html %}
-          {%- endif %}
-          {%- if page.social %}
-          <!-- Social -->
-          <div class="social">
-            <div class="contact-icons">
-            {% include social.html %}
-            </div>
-
-            <div class="contact-note">
-              {{ site.contact_note }}
-            </div>
-            
-          </div>
-          {%- endif %}
-        </article>
-
+<div class="post academic-home">
+  <section class="intro" aria-labelledby="intro-title">
+    <header class="intro-identity">
+      {% if page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% include figure.html path=profile_image_path class="intro-portrait" alt="Farnoush Rezaei Jafari" %}
+      {% endif %}
+      <h1 id="intro-title">{{ site.first_name }}<br>{{ site.last_name }}</h1>
+      <p class="intro-role">PhD candidate<br><span>TU Berlin · BIFOLD</span></p>
+      <p class="intro-focus">Interpretability &amp; efficient AI</p>
+    </header>
+    <div class="intro-bio">{{ content }}</div>
+    <div class="intro-contact">
+      <a href="mailto:{{ site.email | encode_email }}" aria-label="Email {{ site.email }}" title="{{ site.email }}"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+    </div>
+    {% if page.social %}
+    <nav class="intro-links" aria-label="Research and social profiles">
+      {% if site.scholar_userid %}<a href="https://scholar.google.com/citations?user={{ site.scholar_userid | escape }}" aria-label="Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>{% endif %}
+      {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" aria-label="GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>{% endif %}
+      {% if site.linkedin_username %}<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>{% endif %}
+      {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>{% endif %}
+    </nav>
+    {% endif %}
+  </section>
+  {% if page.news %}{% include news.html %}{% endif %}
+  {% if page.selected_papers %}{% include selected_papers.html %}{% endif %}
 </div>
